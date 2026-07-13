@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yago Guincho | Reboque e Socorro 24h em Linhares - ES</title>
+<meta name="description" content="Yago Guincho - Reboque de carros, caminhonetes, máquinas e tratores em Linhares e região. Atendimento 24 horas. Ligue: 27 99984-7205">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red: #c1443d;
+    --red-dark: #a3352f;
+    --red-tint: #fbeae8;
+    --charcoal: #2e2b2a;
+    --grey: #6b6462;
+    --cream: #faf6f2;
+    --white: #ffffff;
+    --border: #eee0da;
+    --shadow: 0 10px 30px rgba(46, 43, 42, 0.08);
+    --radius: 16px;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  a{ text-decoration: none; color: inherit; }
+
+  img{ max-width: 100%; display: block; }
+
+  .container{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow{
+    display: inline-block;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .btn-primary{
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(193, 68, 61, 0.35);
+  }
+
+  .btn-primary:hover{
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline{
+    background: var(--white);
+    color: var(--charcoal);
+    border: 2px solid var(--border);
+  }
+
+  .btn-outline:hover{
+    border-color: var(--red);
+    color: var(--red);
+    transform: translateY(-2px);
+  }
+
+  .btn svg{
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .btn-whatsapp svg{ fill: currentColor; }
+
+  /* HEADER */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--charcoal);
+  }
+
+  .logo img{
+    height: 42px;
+    width: auto;
+  }
+
+  .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover{ color: var(--red); }
+
+  .nav-cta{ display: flex; align-items: center; gap: 14px; }
+
+  .nav-toggle{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .nav-toggle span{
+    width: 26px;
+    height: 3px;
+    background: var(--charcoal);
+    border-radius: 3px;
+  }
+
+  /* HERO */
+  .hero{
+    padding: 72px 0 90px;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(193, 68, 61, 0.10), transparent 45%),
+      linear-gradient(180deg, #fdf9f6 0%, var(--cream) 100%);
+  }
+
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero h1{
+    font-size: 44px;
+    margin-bottom: 18px;
+    color: var(--charcoal);
+  }
+
+  .hero h1 span{ color: var(--red); }
+
+  .hero p{
+    font-size: 17px;
+    color: var(--grey);
+    max-width: 480px;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+
+  .hero-info{
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-info div{ display: flex; align-items: center; gap: 10px; }
+
+  .hero-info strong{ display: block; font-size: 15px; }
+  .hero-info small{ color: var(--grey); font-size: 13px; }
+
+  .icon-badge{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--red-tint);
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .icon-badge svg{
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .hero-media{
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3.4;
+  }
+
+  .hero-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-media .tag{
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background: rgba(46, 43, 42, 0.75);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* SECTIONS */
+  section{ padding: 80px 0; }
+
+  .section-head{
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 48px;
+  }
+
+  .section-head h2{
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .section-head p{ color: var(--grey); font-size: 16px; }
+
+  /* SOBRE */
+  .about{ background: var(--white); }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .about-media{
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .about-text p{ margin-bottom: 16px; color: var(--grey); font-size: 16px; }
+
+  .stats{
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .stat strong{
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: var(--red);
+  }
+
+  .stat span{ font-size: 14px; color: var(--grey); }
+
+  /* SERVICES */
+  .services-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card{
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 26px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .service-card:hover{
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+
+  .service-card .icon-badge{ margin-bottom: 18px; width: 50px; height: 50px; font-size: 22px; }
+  .service-card .icon-badge svg{ width: 24px; height: 24px; }
+
+  .service-card h3{ font-size: 18px; margin-bottom: 10px; }
+
+  .service-card p{ color: var(--grey); font-size: 14.5px; }
+
+  /* GALLERY */
+  .gallery{ background: var(--white); }
+
+  .gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .gallery-grid figure{
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3;
+    position: relative;
+  }
+
+  .gallery-grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-grid figure:hover img{ transform: scale(1.06); }
+
+  /* WHY US */
+  .why{
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    color: var(--white);
+  }
+
+  .why .section-head h2, .why .section-head p{ color: var(--white); }
+  .why .section-head p{ color: rgba(255,255,255,0.85); }
+  .why .eyebrow{ color: #ffffff; background: rgba(255,255,255,0.16); padding: 5px 14px; border-radius: 50px; }
+
+  .why-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .why-card{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    text-align: center;
+  }
+
+  .why-card .icon-badge{
+    background: rgba(255,255,255,0.16);
+    color: #fff;
+    margin: 0 auto 14px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .why-card .icon-badge svg{ width: 22px; height: 22px; }
+
+  .why-card h3{ font-size: 16px; margin-bottom: 8px; }
+  .why-card p{ font-size: 13.5px; color: rgba(255,255,255,0.85); }
+
+  /* CONTACT */
+  .contact{ background: var(--cream); }
+
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .contact-card{
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+  }
+
+  .contact-card h3{ font-size: 22px; margin-bottom: 22px; }
+
+  .contact-row{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .contact-row strong{ display: block; font-size: 15px; margin-bottom: 2px; }
+  .contact-row span{ color: var(--grey); font-size: 14.5px; }
+
+  .contact-actions{
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .map-wrap{
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-height: 320px;
+  }
+
+  .map-wrap iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    min-height: 320px;
+  }
+
+  /* FOOTER */
+  footer{
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.7);
+    padding: 34px 0;
+  }
+
+  .footer-grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  .footer-grid .logo{ color: #fff; }
+
+  .whatsapp-float{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25D366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    z-index: 200;
+    font-size: 28px;
+    transition: transform 0.15s ease;
+  }
+
+  .whatsapp-float:hover{ transform: scale(1.08); }
+
+  .whatsapp-float svg{
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px){
+    .hero-grid, .about-grid, .contact-grid{
+      grid-template-columns: 1fr;
+    }
+    .about-media{ order: -1; }
+    .services-grid{ grid-template-columns: repeat(2, 1fr); }
+    .why-grid{ grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 720px){
+    .nav-links, .nav-cta .btn-outline{ display: none; }
+    .nav-toggle{ display: flex; }
+    .nav.open .nav-links{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      padding: 20px 24px;
+      gap: 18px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .hero h1{ font-size: 32px; }
+    .hero-info{ gap: 18px; }
+    .services-grid, .why-grid, .gallery-grid{ grid-template-columns: 1fr; }
+    .section-head h2{ font-size: 26px; }
+    .footer-grid{ flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container" id="nav">
+    <a href="#topo" class="logo">
+      <img src="logo.png" alt="Yago Guincho">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="btn btn-outline btn-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.76 1.47h.01c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.15h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.87-9.89 9.87zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+        27 99984-7205
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="topo">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Guincho 24 horas em Linhares - ES</span>
+      <h1>Seu veículo em boas mãos, <span>a qualquer hora</span></h1>
+      <p>Reboque rápido e seguro para carros, caminhonetes, máquinas e tratores. Atendimento ágil em Linhares e região, todos os dias da semana.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="btn btn-primary" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="btn btn-outline" target="_blank" rel="noopener">Ligar agora</a>
+      </div>
+      <div class="hero-info">
+        <div>
+          <span class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+          <div><strong>Atendimento 24h</strong><small>Todos os dias, inclusive fins de semana</small></div>
+        </div>
+        <div>
+          <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+          <div><strong>Linhares e região</strong><small>Cobertura em toda a área</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="foto1.jpeg" alt="Guincho Yago transportando caminhonete após acidente">
+      <span class="tag">Frota própria e equipada</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="foto5.jpeg" alt="Guincho Yago em serviço mesmo em dias de chuva">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Sobre a Yago Guincho</span>
+      <h2>Quem você chama quando o imprevisto acontece</h2>
+      <p>A Yago Guincho nasceu para dar tranquilidade a quem fica na mão na estrada ou na garagem. Trabalhamos com pontualidade, cuidado com o veículo e transparência no atendimento, do primeiro contato até a entrega no destino.</p>
+      <p>Atendemos carros de passeio, caminhonetes, veículos acidentados, máquinas agrícolas e industriais, tratores e muito mais — sempre com equipamento adequado para cada tipo de carga.</p>
+      <div class="stats">
+        <div class="stat"><strong>24h</strong><span>Disponibilidade</span></div>
+        <div class="stat"><strong>100%</strong><span>Compromisso com o cliente</span></div>
+        <div class="stat"><strong>+1</strong><span>Frota equipada</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Serviços de reboque e transporte</h2>
+      <p>Soluções completas para diferentes tipos de veículos e situações de emergência.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
+        <h3>Reboque de carros e caminhonetes</h3>
+        <p>Transporte seguro em plataforma para veículos leves, com ou sem condições de rodar.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+        <h3>Socorro após acidentes</h3>
+        <p>Atendimento rápido no local, remoção cuidadosa e transporte até oficina ou pátio.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
+        <h3>Transporte de tratores e máquinas</h3>
+        <p>Estrutura preparada para cargas pesadas: tratores, implementos e equipamentos industriais.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+        <h3>Pane elétrica e mecânica</h3>
+        <p>Veículo não liga ou apresentou defeito na via? Fazemos a remoção até o local desejado.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+        <h3>Atendimento 24 horas</h3>
+        <p>Plantão todos os dias da semana, inclusive à noite, feriados e fins de semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Trabalhos realizados</span>
+      <h2>Alguns serviços feitos pela Yago Guincho</h2>
+      <p>Da caminhonete ao trator: equipamento certo para cada transporte.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="foto1.jpeg" alt="Transporte de caminhonete acidentada"></figure>
+      <figure><img src="foto2.jpeg" alt="Transporte de veículo com dano frontal"></figure>
+      <figure><img src="foto3.jpeg" alt="Transporte de máquina industrial"></figure>
+      <figure><img src="foto4.jpeg" alt="Transporte de carro antigo"></figure>
+      <figure><img src="foto5.jpeg" alt="Transporte de veículo em dia de chuva"></figure>
+      <figure><img src="foto6.jpeg" alt="Transporte de trator agrícola"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Por que escolher a Yago</span>
+      <h2>Confiança em cada reboque</h2>
+      <p>O que fazemos diferente para o seu veículo chegar bem ao destino.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+        <h3>Resposta rápida</h3>
+        <p>Chegamos rápido ao local para reduzir seu tempo de espera.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+        <h3>Cuidado com o veículo</h3>
+        <p>Fixação correta e transporte cuidadoso do início ao fim.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+        <h3>Atendimento direto</h3>
+        <p>Fale direto com quem vai te atender, sem burocracia.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path><polyline points="2.32 6.16 12 11 21.68 6.16"></polyline><line x1="12" y1="22.76" x2="12" y2="11"></line></svg></span>
+        <h3>Cargas diversas</h3>
+        <p>De carros a máquinas pesadas, temos o equipamento certo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Fale com a gente</span>
+      <h2>Precisa de um guincho agora?</h2>
+      <p>Entre em contato pelo telefone, WhatsApp ou venha até o nosso endereço.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Informações de contato</h3>
+        <div class="contact-row">
+          <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+          <div><strong>Telefone / WhatsApp</strong><span>27 99984-7205</span></div>
+        </div>
+        <div class="contact-row">
+          <span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+          <div><strong>Endereço</strong><span>Rua João Fregona, 805 - Interlagos, Linhares - ES</span></div>
+        </div>
+        <div class="contact-row">
+          <span class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+          <div><strong>Horário</strong><span>Atendimento 24 horas, todos os dias</span></div>
+        </div>
+        <div class="contact-actions">
+          <a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="btn btn-primary" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="btn btn-outline" target="_blank" rel="noopener">Ligar agora</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Rua+Jo%C3%A3o+Fregona,+805+-+Interlagos,+Linhares+-+ES&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização Yago Guincho">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <span>&copy; <span id="ano"></span> Yago Guincho. Todos os direitos reservados.</span>
+    <span>Rua João Fregona, 805 - Interlagos, Linhares - ES</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5527999847205?text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('nav').classList.toggle('open');
+  });
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
